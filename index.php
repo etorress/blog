@@ -99,24 +99,31 @@
         <h2>Comentarios</h2>
         <?php
           $formatohtml = "<div class=\"comment\">";
-          $consulta = $conexion->query("SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20");
-          echo "works";
-          while ($fila=$consulta->fetch_row()) {
+          //$consulta = $conexion->query("SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20");
+          $sql = "SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20";
+          $result = $conexion->query($sql);
 
-            $formatohtml = $formatohtml . "<div class=\"comment-avatar\">";
-            $formatohtml = $formatohtml . "<img width=\"48\" height=\"48\" src=\"images/user.png\" />";
-            $formatohtml = $formatohtml . "</div>";
-            $formatohtml = $formatohtml . "<div class=\"comment-autor\">";
-            $formatohtml = $formatohtml . "<strong>" . $fila[1] . "</strong> dice:<br/>";
-            $formatohtml = $formatohtml . "<small>". $fila[3] . " </small>";
-            $formatohtml = $formatohtml . "</div>";
-            $formatohtml = $formatohtml . "<div class=\"comment-text\">" . $fila[2] . "</div>";
-            $formatohtml = $formatohtml . "</div>";
+          if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+              $formato = "<div class=\"comment\">";
+              $formato = $formato . "<div class=\"comment-avatar\">";
+              $formato = $formato . "<img width=\"48\" height=\"48\" src=\"user.png\" />	";
+              $formato = $formato . "</div>";
+              $formato = $formato . "<div class=\"comment-autor\">";
+              $formato = $formato . "<strong>" . $row['name'] . "</strong><br/>";
+              $formato = $formato . "<small>" . $row['date_show'] . "</small>";
+              $formato = $formato . "</div>";
+              $formato = $formato . "<div class=\"comment-text\">" . $row['comment'] . "</div>";
+              $formato = $formato . "</div>";
 
+            }
+            echo $formato;
+          }
+          else{
+            echo "0 results";
           }
 
-          echo $formatohtml;
-           mysql_close($conexion);
+          $conexion->close();
 
         ?>
         <div id="newmessage"></div>
