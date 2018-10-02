@@ -22,10 +22,10 @@ $(document).ready(function() {
 
         $.ajax({
                 type: "POST",
-                url: "vendor/php/addcomment.php",
+                url: "vendor/php/add_comment.php",
                 data: dataString,
                 success: function() {
-                    $('#newmessage').append('<div class="comment"><div class="comment-avatar"><img width="48" height="48" src="images/user.png" /></div><div class="comment-autor"><strong>'+name+'</strong> dice:<br/><small>'+date_show+'</small></div><div class="comment-text">'+comment+'</div></div>');
+                    $('#newmessage').append('<div class="comment"><div class="comment-avatar"><img width="48" height="48" src="user.png" /></div><div class="comment-autor"><strong>'+name+'</strong> <br/><small>'+date_show+'</small></div><div class="comment-text">'+comment+'</div></div>');
                 }
         });
         return false;

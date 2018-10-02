@@ -16,6 +16,7 @@
 
 <body>
 
+  <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Eduardo Torres</a>
@@ -42,10 +43,13 @@
       </div>
     </div>
   </nav>
+
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <h1 class="my-4">Series</h1>
+
+        <!-- post -->
         <div class="card mb-4">
           <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
 
@@ -61,6 +65,7 @@
           </div>
         </div>
 
+        <!-- post -->
         <div class="card mb-4">
           <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
           <div class="card-body">
@@ -74,6 +79,7 @@
           </div>
         </div>
 
+        <!-- post -->
         <div class="card mb-4">
           <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
           <div class="card-body">
@@ -87,6 +93,7 @@
           </div>
         </div>
 
+        <!-- change page buttons -->
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
             <a class="page-link" href="#">&larr; Older</a>
@@ -96,16 +103,17 @@
           </li>
         </ul>
         <div class="content">
+
+        <!--comments section-->
         <h2>Comentarios</h2>
         <?php
           $formatohtml = "<div class=\"comment\">";
           //$consulta = $conexion->query("SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20");
           $sql = "SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20";
           $result = $conexion->query($sql);
-
           if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-              $formato = "<div class=\"comment\">";
+              $formato = $fomarto . "<div class=\"comment\">";
               $formato = $formato . "<div class=\"comment-avatar\">";
               $formato = $formato . "<img width=\"48\" height=\"48\" src=\"user.png\" />	";
               $formato = $formato . "</div>";
@@ -115,9 +123,9 @@
               $formato = $formato . "</div>";
               $formato = $formato . "<div class=\"comment-text\">" . $row['comment'] . "</div>";
               $formato = $formato . "</div>";
+              echo $formato;
 
             }
-            echo $formato;
           }
           else{
             echo "0 results";
@@ -126,6 +134,8 @@
           $conexion->close();
 
         ?>
+
+        <!--add comment -->
         <div id="newmessage"></div>
         <h2>Envia un comentario con JQUERY/AJAX</h2>
         <div id="register_form">
@@ -138,9 +148,12 @@
                     <div style="margin-left: 480px;"> <input name="submit" type="submit" value="enviar" id="enviar-btn" /></div>
             </form>
         </div>
+
+
       </div>
       </div>
 
+      <!--side options-->
       <div class="col-md-4">
         <div class="card my-4">
           <h5 class="card-header">Categorias</h5>
@@ -176,7 +189,7 @@
   </div>
 
 
-
+  <!--footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Eduardo Torres 2018</p>
