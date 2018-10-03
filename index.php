@@ -18,12 +18,12 @@
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <section class="container">
       <a class="navbar-brand" href="#">Eduardo Torres</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <section class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
@@ -40,58 +40,58 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </section>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h1 class="my-4">Series</h1>
+  <section class="container">
+    <section class="row">
+      <section class="col-md-8">
+        <header><h1 class="my-4">Series</h1></header>
 
-        <!-- post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+        <!-- the leftovers -->
+        <section class="card mb-4">
+          <img class="card-img-top" src="images\the_leftovers.jpg" alt="Card image cap">
 
-          <div class="card-body">
+          <section class="card-body">
             <h2 class="card-title">The Leftovers</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
+          </section>
 
-          <div class="card-footer text-muted">
+          <section class="card-footer text-muted">
             Publicado en septiembre 30, 2018 por
             <a href="#">Eduardo Torres</a>
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <!-- post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
+        <!-- westworld -->
+        <section class="card mb-4">
+          <img class="card-img-top" src="images\westworld.png" alt="Card image cap">
+          <section class="card-body">
             <h2 class="card-title">Westworld</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
+          </section>
+          <section class="card-footer text-muted">
             Publicado en septiembre 20, 2018 por
             <a href="#">Eduardo Torres</a>
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <!-- post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
+        <!-- big little lies -->
+        <section class="card mb-4">
+          <img class="card-img-top" src="images\big-little-lies.png" alt="Card image cap">
+          <section class="card-body">
             <h2 class="card-title">Big Little Lies</h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
+          </section>
+          <section class="card-footer text-muted">
             Publicado en septiembre 20, 2018 por
             <a href="#">Eduardo Torres</a>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <!-- change page buttons -->
         <ul class="pagination justify-content-center mb-4">
@@ -102,7 +102,7 @@
             <a class="page-link" href="#">Newer &rarr;</a>
           </li>
         </ul>
-        <div class="content">
+        <section class="content">
 
         <!--comments section-->
         <h2>Comentarios</h2>
@@ -113,22 +113,22 @@
           $result = $conexion->query($sql);
           if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-              $formato = $fomarto . "<div class=\"comment\">";
-              $formato = $formato . "<div class=\"comment-avatar\">";
+              $formato = $fomarto . "<section class=\"comment\">";
+              $formato = $formato . "<section class=\"comment-avatar\">";
               $formato = $formato . "<img width=\"48\" height=\"48\" src=\"user.png\" />	";
-              $formato = $formato . "</div>";
-              $formato = $formato . "<div class=\"comment-autor\">";
+              $formato = $formato . "</section>";
+              $formato = $formato . "<section class=\"comment-autor\">";
               $formato = $formato . "<strong style='position: relative; left: 20px; top:-5px;'>" . $row['name'] . "</strong><br/>";
               $formato = $formato . "<small style='position: relative; left: 20px; top: -10px;'>" . $row['date_show'] . "</small>";
-              $formato = $formato . "</div>";
-              $formato = $formato . "<div class=\"comment-text\"><span>" . $row['comment'] . "</span></div>";
-              $formato = $formato . "</div>";
+              $formato = $formato . "</section>";
+              $formato = $formato . "<section class=\"comment-text\"><span>" . $row['comment'] . "</span></section>";
+              $formato = $formato . "</section>";
               echo $formato;
 
             }
           }
           else{
-            echo "0 results";
+
           }
 
           $conexion->close();
@@ -136,30 +136,31 @@
         ?>
 
         <!--add comment -->
-        <div id="newmessage"></div>
-        <h2>Envia un comentario con JQUERY/AJAX</h2>
-        <div id="register_form">
+        <section id="newmessage"></section>
+        <h2>Agregar comentario.</h2>
+        <section id="register_form">
             <form method="post" action="">
                     Nombre:<br/>
-                    <input type="text" id="name" name="name" size="40" /><br/><br/>
+                    <input type="text" class="form-control" id="name" name="name" size="40" /><br/><br/>
                     Comentario:<br/>
-                    <textarea name="comment" id="comment" rows="6" cols="65"></textarea>
-                    <br/><br/>
-                    <div style="margin-left: 480px;"> <input name="submit" type="submit" value="enviar" id="enviar-btn" /></div>
+                    <textarea name="comment" id="comment" class="form-control" rows="6"></textarea>
+                    <br/>
+                    <section style="margin-left: 88%;"> <input name="submit" class="btn btn-success" type="submit" value="Enviar" id="enviar-btn" /></section>
             </form>
-        </div>
+        </section>
 
 
-      </div>
-      </div>
+      </section>
+      </section>
 
       <!--side options-->
-      <div class="col-md-4">
-        <div class="card my-4">
+      <section class="col-md-4">
+        <aside>
+        <section class="card my-4">
           <h5 class="card-header">Categorias</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-6">
+          <section class="card-body">
+            <section class="row">
+              <section class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
                     <a href="#">Películas</a>
@@ -168,32 +169,32 @@
                     <a href="#">Series</a>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card my-4">
+              </section>
+            </section>
+          </section>
+        </section>
+        <section class="card my-4">
           <h5 class="card-header">About me</h5>
-          <div class="card-body">
+          <section class="card-body">
             Soy un estudiante de ingeniería en software de 21, interesado en
             el contenido multimedia, so, estaré publicando post con mi opinión
             personal acerca de películas y series que haya visto y que me parezca
             que deben de ser recomendadas.
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </aside>
+      </section>
 
 
-    </div>
-  </div>
+    </section>
+  </section>
 
 
   <!--footer -->
   <footer class="py-5 bg-dark">
-    <div class="container">
+    <section class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Eduardo Torres 2018</p>
-    </div>
+    </section>
   </footer>
 
   <script src="vendor/jquery/jquery.min.js"></script>
