@@ -47,7 +47,7 @@
   <section class="container">
     <section class="row">
       <section class="col-md-8">
-        <header><h1 class="my-4">Series</h1></header>
+        <header><h1 class="my-4">Inicio</h1></header>
 
         <!-- the leftovers -->
         <section class="card mb-4">
