@@ -29,10 +29,13 @@
 	width: 74%;
 }
 .comment-text {
-	margin-right: 10px;
+	margin-right: 40px;
 	margin-top: 71px;
-	padding-left: 10px;
-	padding-top: 10px;
+	padding: 12px;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+
 }
 #register_form {
 	box-shadow: 0 2px 5px #666666;

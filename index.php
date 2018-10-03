@@ -107,7 +107,7 @@
         <!--comments section-->
         <h2>Comentarios</h2>
         <?php
-          $formatohtml = "<div class=\"comment\">";
+
           //$consulta = $conexion->query("SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20");
           $sql = "SELECT name, comment, DATE_FORMAT(date_added, '%d-%m-%Y %H:%i:%s') as date_show FROM comments ORDER BY date_added DESC LIMIT 0,20";
           $result = $conexion->query($sql);
@@ -118,10 +118,10 @@
               $formato = $formato . "<img width=\"48\" height=\"48\" src=\"user.png\" />	";
               $formato = $formato . "</div>";
               $formato = $formato . "<div class=\"comment-autor\">";
-              $formato = $formato . "<strong>" . $row['name'] . "</strong><br/>";
-              $formato = $formato . "<small>" . $row['date_show'] . "</small>";
+              $formato = $formato . "<strong style='position: relative; left: 20px; top:-5px;'>" . $row['name'] . "</strong><br/>";
+              $formato = $formato . "<small style='position: relative; left: 20px; top: -10px;'>" . $row['date_show'] . "</small>";
               $formato = $formato . "</div>";
-              $formato = $formato . "<div class=\"comment-text\">" . $row['comment'] . "</div>";
+              $formato = $formato . "<div class=\"comment-text\"><span>" . $row['comment'] . "</span></div>";
               $formato = $formato . "</div>";
               echo $formato;
 
