@@ -25,7 +25,7 @@ $(document).ready(function() {
                 url: "vendor/php/add_comment.php",
                 data: dataString,
                 success: function() {
-                    $('#newmessage').append('<div class="comment"><div class="comment-avatar"><img width="48" height="48" src="user.png" /></div><div class="comment-autor"><strong>'+name+'</strong> <br/><small>'+date_show+'</small></div><div class="comment-text">'+comment+'</div></div>');
+                    $('#newmessage').append('<section class="comment"><section class="comment-avatar"><img width="48" height="48" src="user.png" /></section><section class="comment-autor" style="position: relative; left: 20px; top:-5px;"><strong>'+name+'</strong> <br/><small style="position: relative; left: 20px; top:-5px;">'+date_show+'</small></section><section class="comment-text" style="text-align: left;">'+comment+'</section></section>');
                 }
         });
         return false;

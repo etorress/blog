@@ -14,10 +14,10 @@
   <link type="text/css" href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="text-align: justify; background-color: #F0F8FF" >
 
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #2E4A62!important; ">
     <section class="container">
       <a class="navbar-brand" href="#">Eduardo Torres</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,13 +50,15 @@
         <header><h1 class="my-4">Inicio</h1></header>
 
         <!-- the leftovers -->
-        <section class="card mb-4">
-          <img class="card-img-top" src="images\the_leftovers.jpg" alt="Card image cap">
+        <section class="card mb-4" id="hover column">
+          <img class="card-img-top" src="images\the_leftovers.jpg" alt="Card image cap" id="blur">
 
           <section class="card-body">
             <h2 class="card-title">The Leftovers</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <p class="card-text">Cuando el 2% de la población mundial desaparece de forma literal y abrupta, sin explicación alguna, quedando sólo sus ropas en el sitio en el que sus cuerpos se evaporaron, el resto de la población
+              de la Tierra comienza a intentar comprender lo que ha pasado, y sobre todo lo que se supone que deben hacer al respecto. Uno de estas personas es el jefe de la policía de un pequeño suburbio de Nueva York, padre de dos
+              hijos, que trata de mantener cierta apariencia de normalidad.</p>
+            <button class="btn btn-primary" id="btns"><span>Read More</span></button>
           </section>
 
           <section class="card-footer text-muted">
@@ -67,11 +69,12 @@
 
         <!-- westworld -->
         <section class="card mb-4">
-          <img class="card-img-top" src="images\westworld.png" alt="Card image cap">
+          <img class="card-img-top" src="images\westworld.png" alt="Card image cap" id="blur">
           <section class="card-body">
             <h2 class="card-title">Westworld</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <p class="card-text">Westworld es un parque de atracciones futurista y controlado por alta tecnología dirigido por el Dr. Robert Ford (Anthony Hopkins). Las instalaciones cuentan con androides cuya apariencia
+              física es humana, y gracias a ellos los visitantes pueden dar rienda suelta a sus instintos y vivir cualquier tipo de aventura o fantasía, por muy oscura o peligrosa que sea, sabiendo que los robots no les harán daño.</p>
+            <button class="btn btn-primary" id="btns"><span>Read More</span></button>
           </section>
           <section class="card-footer text-muted">
             Publicado en septiembre 20, 2018 por
@@ -80,12 +83,14 @@
         </section>
 
         <!-- big little lies -->
-        <section class="card mb-4">
-          <img class="card-img-top" src="images\big-little-lies.png" alt="Card image cap">
+        <section class="card mb-4" id="hover column">
+          <img class="card-img-top" src="images\big-little-lies.png" alt="Card image cap" id="blur">
           <section class="card-body">
             <h2 class="card-title">Big Little Lies</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <p class="card-text">Podríamos decir que ‘Big Little Lies‘ es un thriller vestido de drama pero con tintes de comedia negra. Está protagonizado por tres mujeres: Madeline Martha Mackenzie (Reese Witherspoon),
+               Celeste Wright (Nicole Kidman) y Jane Chapman (Shailene Woodley). Los hijos de estas tres madres van a un jardín de infancia, pero se ven envueltas en turbios problemas: la infidelidad, la violencia doméstica
+               y el acoso escolar. Ese sería, básicamente, el punto de partida. </p>
+            <button class="btn btn-primary" id="btns"><span>Read More</span></button>
           </section>
           <section class="card-footer text-muted">
             Publicado en septiembre 20, 2018 por
@@ -113,7 +118,7 @@
           $result = $conexion->query($sql);
           if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-              $formato = $fomarto . "<section class=\"comment\">";
+              $formato = $fomarto . "<section class=\"comment\" style='background-color: #fff'>";
               $formato = $formato . "<section class=\"comment-avatar\">";
               $formato = $formato . "<img width=\"48\" height=\"48\" src=\"user.png\" />	";
               $formato = $formato . "</section>";
@@ -121,7 +126,7 @@
               $formato = $formato . "<strong style='position: relative; left: 20px; top:-5px;'>" . $row['name'] . "</strong><br/>";
               $formato = $formato . "<small style='position: relative; left: 20px; top: -10px;'>" . $row['date_show'] . "</small>";
               $formato = $formato . "</section>";
-              $formato = $formato . "<section class=\"comment-text\"><span>" . $row['comment'] . "</span></section>";
+              $formato = $formato . "<section class=\"comment-text\" style='text-align: left;'><span class='comments-text'>" . $row['comment'] . "</span></section>";
               $formato = $formato . "</section>";
               echo $formato;
 
@@ -145,7 +150,7 @@
                     Comentario:<br/>
                     <textarea name="comment" id="comment" class="form-control" rows="6"></textarea>
                     <br/>
-                    <section style="margin-left: 88%;"> <input name="submit" class="btn btn-success" type="submit" value="Enviar" id="enviar-btn" /></section>
+                    <section style="align-items: right;"> <input name="submit" class="btn btn-success" type="submit" value="Enviar" id="enviar-btn"/></section>
             </form>
         </section>
 
@@ -154,7 +159,7 @@
       </section>
 
       <!--side options-->
-      <section class="col-md-4">
+      <section class="col-md-4" style="position: relative; top:70px;">
         <aside>
         <section class="card my-4">
           <h5 class="card-header">Categorias</h5>

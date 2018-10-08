@@ -11,6 +11,7 @@
 	margin: 15px 0 10px;
 	padding: 15px;
 	width: 96%;
+	text-align: left;
 }
 .comment-avatar {
 	float: left;
@@ -35,7 +36,8 @@
 	-webkit-border-radius: 0 0 4px 4px;
 	-moz border-radius: 0 0 4px 4px;
 	border-radius: 0 0 4px 4px;
-
+	text-align: left;
+	margin-bottom: 20px;
 }
 #register_form {
 	box-shadow: 0 2px 5px #666666;
@@ -43,4 +45,60 @@
 	list-style: none outside none;
 	margin: 15px 0 10px;
 	padding: 15px;
+	background-color: #fff;
+}
+
+#blur{
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#blur:hover{
+	-webkit-filter: grayscale(0) blur(0);
+	filter: grayscale(0) blur(0);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.comments-text{
+	float: left;
+	margin-bottom: 10px;
+}
+
+#btns, #enviar-btn{
+	text-align: center;
+  font-size: 16px;
+  padding: 13px;
+  transition: all 0.5s;
+  cursor: pointer;
+	background-color: #006E6D;
+	width: 200px;
+	border-color: #006E6D;
+}
+
+#btns span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#btns span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#btns:hover span {
+  padding-right: 25px;
+}
+
+#btns:hover span:after{
+  opacity: 1;
+  right: 0;
 }
