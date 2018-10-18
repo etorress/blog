@@ -12,6 +12,19 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/blog-home.css" rel="stylesheet">
   <link type="text/css" href="css/styles.css" rel="stylesheet">
+
+  <script>
+    window.onload=function(){
+      var varVideo=document.getElementById("media");
+      var varPlay=document.getElementById("btns");
+      var varPause=document.getElementById("btnPause");
+      
+      varPlay.addEventListener("click",empezar);
+      function empezar{
+        varVideo.play();
+      }
+    }
+  </script>
 </head>
 
 <body style="text-align: justify; background-color: #F0F8FF" >
@@ -93,7 +106,18 @@
             <button class="btn btn-primary" id="btns"><span>Read More</span></button>
           </section>
           <section class="card-footer text-muted">
-            Publicado en septiembre 20, 2018 por
+            Publicado en septiembre , 2018 por
+            <a href="#">Eduardo Torres</a>
+          </section>
+        </section>
+
+        <section class="card mb-4" id="hover column">
+          <video id="media" controls>
+            <source src="images\khalid.mp4" id="media">
+          </video>
+          <button class="btn btn-primary" id="btns" name="btnPlay"><span>Play</span></button>
+          <section class="card-footer text-muted">
+            Publicado en octubre 08, 2018 por
             <a href="#">Eduardo Torres</a>
           </section>
         </section>
@@ -161,42 +185,40 @@
       <!--side options-->
       <section class="col-md-4" style="position: relative; top:70px;">
         <aside>
-        <section class="card my-4">
-          <h5 class="card-header">Categorias</h5>
-          <section class="card-body">
-            <section class="row">
-              <section class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Películas</a>
-                  </li>
-                  <li>
-                    <a href="#">Series</a>
-                  </li>
-                </ul>
+          <section class="card my-4">
+            <h5 class="card-header">About me</h5>
+            <section class="card-body">
+              Soy un estudiante de ingeniería en software de 21, interesado en
+              el contenido multimedia, so, estaré publicando post con mi opinión
+              personal acerca de películas y series que haya visto y que me parezca
+              que deben de ser recomendadas.
+            </section>
+          </section>
+          <section class="card my-4">
+            <h5 class="card-header">Categorias</h5>
+            <section class="card-body">
+              <section class="row">
+                <section class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Películas</a>
+                    </li>
+                    <li>
+                      <a href="#">Series</a>
+                    </li>
+                  </ul>
+                </section>
               </section>
             </section>
           </section>
-        </section>
-        <section class="card my-4">
-          <h5 class="card-header">About me</h5>
-          <section class="card-body">
-            Soy un estudiante de ingeniería en software de 21, interesado en
-            el contenido multimedia, so, estaré publicando post con mi opinión
-            personal acerca de películas y series que haya visto y que me parezca
-            que deben de ser recomendadas.
-          </section>
-        </section>
-      </aside>
+        </aside>
       </section>
-
-
     </section>
   </section>
 
 
   <!--footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark" style="background-color: #2E4A62!important;">
     <section class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Eduardo Torres 2018</p>
     </section>
